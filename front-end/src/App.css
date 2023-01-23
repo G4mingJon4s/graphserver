@@ -1,0 +1,20 @@
+.graph-container {
+	width: 90vw;
+	height: 90vh;
+
+	margin: 10px;
+	justify-content: center;
+	text-align: center;
+}
+
+.no-data {
+	margin: 10px;
+	justify-content: center;
+	text-align: center;
+}
+
+.average-display {
+	margin: 10px;
+	justify-content: center;
+	text-align: center;
+}
