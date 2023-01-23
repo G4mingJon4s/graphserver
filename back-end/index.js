@@ -1,5 +1,6 @@
 import express from "express";
-import { readFile, writeFile } from "fs/promises";
+import { existsSync } from "fs";
+import { mkdir, readFile, writeFile } from "fs/promises";
 import path from "path";
 import { Server } from "socket.io";
 const http = await import("http");
@@ -9,6 +10,8 @@ const stockForecastPath = path.resolve("data/stockForecast.json");
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
+
+if (!existsSync(path.resolve("/data/stockForecast.json"))) await mkdir(path.resolve("/data"));
 
 const connections = {};
 const currentValues = [];
